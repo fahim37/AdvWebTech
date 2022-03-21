@@ -24,7 +24,7 @@ class CourseAPIController extends Controller
         $cr->name = $req->name;
         $cr->department_id = $req->did;
         $cr->save();
-        return response()->json($cr,200);  
+        return response()->json(["msg"=>"Course Created","Values"=>$cr],200);  
     }
     public function editCourseSubmit(Request $req){
         $cr = Course::where('id',$req->id)->first();

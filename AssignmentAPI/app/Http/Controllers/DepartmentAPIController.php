@@ -14,7 +14,7 @@ class DepartmentAPIController extends Controller
         $dp = new Department();
         $dp->name = $req->name;
         $dp->save();
-        return response()->json($dp,200);  
+        return response()->json(["msg"=>"Department Created","Values"=>$dp],200);  
     }
     public function editDepartmentSubmit(Request $req){
         $dp = Department::where('id',$req->id)->first();
