@@ -14,3 +14,4 @@ Route::get('/deleteProduct/{id}',[ProductController::class,'deleteProduct'])->na
 
 Route::get('/addproduct',[ProductController::class,'addproduct']);
 Route::post('/addproduct',[ProductController::class,'addproductsubmit'])->name('addproduct.submit');
+?>

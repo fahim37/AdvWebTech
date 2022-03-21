@@ -42,9 +42,11 @@ class ProductController extends Controller
             'quantity'=>'required',
             'description'=>'required'
         ]);
-        $pr = Product::where('id','=',$req->id)->first();
+        $pr = Product::where('Id','=',$req->id)->first();
+        //return $pr;
         $pr->Name = $req->name;
-        //return $req->name;
+        //return [$req->name,$pr->Name];
+        //return $pr->Name;
         $pr->Price = $req->price;
         $pr->Quantity = $req->quantity;
         $pr->Description = $req->description;
@@ -53,9 +55,11 @@ class ProductController extends Controller
 
     }
     public function deleteProduct(Request $req){
-        $pr = Product::where('id','=',$req->id)->first();
+        $pr = Product::where('Id','=',$req->id)->first();
         $pr->delete();
         return "Product Deleted";
     }
     
 }
+
+?>

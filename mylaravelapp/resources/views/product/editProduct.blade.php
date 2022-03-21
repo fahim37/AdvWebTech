@@ -2,7 +2,6 @@
 @section('content')
 <form action="{{route('product.editProductSubmit',['id'=>$product->Id])}}" method="POST">
     {{@csrf_field()}}
-    <br>
         <span>Update Name:</span>
         <input type="text" name="name" value={{$product->Name}}>
         @error('name')
